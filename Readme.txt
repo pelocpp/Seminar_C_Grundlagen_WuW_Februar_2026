@@ -422,6 +422,124 @@ der an das Unterprogramm übergeben worden ist.
 
 x und wert sind zwei VERSCHIEDENE Variablen.
 
+// ===========================================
+
+Was ist der Clou von dynamischen Daten?
 
 
+== Globale Variablen    -- Für die gesamte Laufzeit
+                           des Programms verfügbar
+
+                           Jeder kann von überall aus
+                           darauf zugreifen.
+
+                           Muss schon vor dem Start der Programms wissen,
+                           was ich anlegen möchte.
+
+                           Globale Variablen sind FIXED SIZE
+
+                           Globales Datensegment.
+
+== Lokale Variablen     -- Zwischenergebnisse
+
+                           Stack Segment
+
+== Dynamische Variablen
+
+                        == Werden zur Laufzeit angelegt.
+
+                        == Umfang // Länge beliebig.
+
+                        == Kann auf die Bedürfnisse angepasst werden
+
+                        == Kann / Sollte nach Gebrauch freigegeben werden.
+
+                           Extra Segment
+
+                           Code Segment // Maschinencode.
+
+
+Felder:
+
+int daten[1000];  
+
+NEVER
+
+int n;
+// n berechnen
+int daten[n];    // NEIN GEHT NICHT // C99  
+
+
+=====================================
+
+malloc:
+
+int*
+
+double*
+
+long*
+
+void*  malloc:
+
+Unmittelbar nach dem Anlegen steht im Speicher
+CD CD CD CD DC
+
+Bedeutet noch kein Wert reingeschrieben!!!
+
+Nach der Freigabe:
+
+DD DD DD DD DD  => Don't touch this memory !!!
+
+Best Practice:
+
+    int* ip = malloc(4);  // einmal int Wert
+
+    if (ip != NULL)
+    { 
+       printf("No memory");
+
+
+Der Vollständigkeit halber: CC CC CC
+
+Stack // nicht vorbelegt.
+
+
+Das kann man etwas diffenziert betrachten:
+
+A) malloc mit KLEINEN Anforderungen:
+
+   Da ist eine Überprüfung des Ergebnisses nicht wirklich nötig.
+
+B) malloc mit GROSSEN Anforderungen // 100'000
+
+   Da sollte man genau arbeiten ........
+
+===================================================
+
+Strukturen
+
+Wie lassen sich mehrere, zusammengehörige
+Variablen "zu einem Ganzen" zusammenfassen?
+
+Struktur   ===> Vorläufer der OO  (Klasse)
+
+SYNTAX:
+
+struct nameDerStruktur
+{
+   // Elemente der Struktur
+};
+
+STOLPERFALLE:
+
+Nach } MUSS ein Semikolon stehen !!!!!!!!!
+
+==============================================
+
+Parameter (Stellvertreter) UND
+mitgegebener Wert (Strukturvariable)
+sind VERSCHIEDENE Speicherbereich !!!
+
+Stellvertreter ist eine KOPIE des mitgegebenen Werts !!!
 

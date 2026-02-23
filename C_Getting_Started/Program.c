@@ -5,6 +5,11 @@
 
 void main()
 {
+    structs();
+}
+
+void main_mit_zeiger()
+{
     int x = 10;
 
     printf("x: %d\n", x);

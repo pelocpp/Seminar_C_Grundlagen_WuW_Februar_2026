@@ -24,6 +24,12 @@
     <ClCompile Include="Zeiger.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Dynamische_Daten.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Strukturen.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Readme.txt" />

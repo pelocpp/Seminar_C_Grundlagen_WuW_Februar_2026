@@ -123,7 +123,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Dynamische_Daten.c" />
     <ClCompile Include="Program.c" />
+    <ClCompile Include="Strukturen.c" />
     <ClCompile Include="Zeiger.c" />
     <ClCompile Include="ZweiteDatei.c" />
   </ItemGroup>
